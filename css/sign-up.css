@@ -1,1 +1,41 @@
 /* write the css for the sign-up page here  */
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    flex-direction: column;
+    font-family: Arial, sans-serif;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    width: 20%;
+    padding: 3em;
+    gap: 0.5em;
+}
+
+label,
+input {
+    width: 100%;
+    padding: 0.4em;
+}
+
+button {
+    margin-top: 2em;
+    padding: 1em;
+    width: 40%;
+    background-color: rgb(70, 29, 215);
+    color: aliceblue;
+    cursor: pointer;
+    border: none;
+    border-radius: 5px;
+}
+
+p {
+    font-size: larger;
+}
