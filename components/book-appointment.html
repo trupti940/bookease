@@ -1,1 +1,28 @@
 <!-- this page for rendering the cards  -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Service Showcase</title>
+  <link rel="stylesheet" href="../css/book-appointment.css" />
+</head>
+<body>
+
+  <!-- Services and Search buttons -->
+  <div id="buttons-container">
+    <button id="services-btn">All Services</button>
+    <div id="category-dropdown" class="dropdown-content"></div>
+    <div id="search-container">
+      <input type="text" id="search-bar" placeholder="Search services" />
+      <div id="search-suggestions" class="suggestions-list"></div>
+    </div>
+  </div>
+
+  <!-- Service Grid -->
+  <section id="service-grid" class="grid-container"></section>
+
+  <script src="../js/book-appointment.js"></script>
+</body>
+</html>
