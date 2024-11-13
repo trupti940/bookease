@@ -1,0 +1,90 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+#wrapper {
+    display: flex;
+    min-height: 100vh;
+}
+
+#sidebar-wrapper {
+    min-width: 250px;
+    max-width: 250px;
+    transition: margin-left 0.3s ease-in-out;
+    background-color: #f8f9fa;
+}
+
+.sidebar .list-group-item {
+    border: none;
+    padding: 15px 20px;
+    display: flex;
+    align-items: center;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.sidebar .list-group-item:hover {
+    background-color: #e9ecef;
+    color: #007bff;
+}
+
+.sidebar .list-group-item .material-icons {
+    font-size: 1.5rem;
+    margin-right: 10px;
+}
+
+.sidebar .sidebar-heading {
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+#page-content-wrapper {
+    width: 100%;
+    padding-left: 15px;
+    transition: all 0.3s;
+}
+
+#menu-toggle {
+    font-size: 1.2rem;
+    cursor: pointer;
+}
+
+.toggle-btn {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.toggle-btn:hover {
+    background-color: #0056b3;
+}
+
+.toggle-btn:focus {
+    outline: 2px solid #0056b3;
+}
+
+#wrapper.toggled #sidebar-wrapper {
+    margin-left: -250px;
+}
+
+@media (max-width: 992px) {
+    #wrapper #sidebar-wrapper {
+        margin-left: -250px;
+    }
+
+    #wrapper.toggled #sidebar-wrapper {
+        margin-left: 0;
+    }
+}
