@@ -8,9 +8,15 @@ const searchBar = document.getElementById("search-bar");
 const searchSuggestions = document.getElementById("search-suggestions");
 
 const categories = [
-  "Health & Wellness", "Professional Services", "Education & Tutoring", 
-  "Fitness & Sports", "Home & Maintenance Services", "Creative & Arts", 
-  "Technology & IT Support", "Events & Entertainment", "Pet Care"
+  "Health & Wellness",
+  "Professional Services",
+  "Education & Tutoring",
+  "Fitness & Sports",
+  "Home & Maintenance Services",
+  "Creative & Arts",
+  "Technology & IT Support",
+  "Events & Entertainment",
+  "Pet Care",
 ];
 
 const fetchServices = () => {
@@ -27,26 +33,37 @@ const fetchServices = () => {
 
 const displayServices = (servicesToDisplay) => {
   serviceGrid.innerHTML = "";
-  servicesToDisplay.forEach((service) => {
-    serviceGrid.innerHTML += `
-      <div class="service-card">
-        <img src="${service.image}" alt="${service.title}" />
-        <div class="service-details">
-          <h3>${service.title}</h3>
-          <p>${service.description}</p>
-          <div class="location">
-            <span>📍</span>
-            <span>${service.location}</span>
-          </div>
-          <p class="price">$${service.charges}</p>
+  servicesToDisplay.forEach((service, index) => {
+    const serviceCard = document.createElement("div");
+    serviceCard.classList.add("service-card");
+    serviceCard.innerHTML = `
+      <img src="${service.image}" alt="${service.title}" />
+      <div class="service-details">
+        <h3>${service.title}</h3>
+        <p>${service.description}</p>
+        <div class="location">
+          <span>📍</span>
+          <span>${service.location}</span>
         </div>
+        <p class="price">$${service.charges}</p>
       </div>
     `;
+    serviceCard.addEventListener("click", () => sendToServicePage(index));
+    serviceGrid.appendChild(serviceCard);
   });
 };
 
+// send id to service page
+const sendToServicePage = (index) => {
+  const encodedData = encodeURIComponent(JSON.stringify(index));
+
+  window.location.href = `service.html?id=${encodedData}`;
+};
+
 const filterServicesByCategory = (category) => {
-  filteredServices = services.filter(service => service.category === category);
+  filteredServices = services.filter(
+    (service) => service.category === category
+  );
   displayServices(filteredServices);
 };
 
@@ -68,14 +85,16 @@ const populateCategoryDropdown = () => {
     button.onclick = () => {
       filterServicesByCategory(category);
       categoryDropdown.style.display = "none"; 
-      document.getElementById("service-grid").style.marginTop = "200px"; 
+      document.getElementById("service-grid").style.marginTop = "200px";
     };
     categoryDropdown.appendChild(button);
   });
 };
 
 const toggleCategoryDropdown = () => {
-  categoryDropdown.style.display = categoryDropdown.style.display === "block" ? "none" : "block";
+  categoryDropdown.style.display =
+    categoryDropdown.style.display === "block" ? "none" : "block";
+
 
   if (categoryDropdown.style.display === "block") {
     document.getElementById("service-grid").style.marginTop = "200px"; 
@@ -93,7 +112,7 @@ const hideCategoryDropdown = () => {
   categoryDropdown.style.display = "none";
 };
 
-
+// Close the dropdown if clicked anywhere outside
 document.addEventListener("click", (e) => {
   if (!categoryDropdown.contains(e.target) && e.target !== servicesBtn) {
     hideCategoryDropdown();
@@ -109,8 +128,10 @@ searchBar.addEventListener("input", (e) => {
   clearTimeout(debounceTimer);
   debounceTimer = setTimeout(() => {
     if (query) {
-      const suggestions = services.filter(service =>
-        service.title.toLowerCase().includes(query) || service.description.toLowerCase().includes(query)
+      const suggestions = services.filter(
+        (service) =>
+          service.title.toLowerCase().includes(query) ||
+          service.description.toLowerCase().includes(query)
       );
       showSearchSuggestions(suggestions);
     } else {
