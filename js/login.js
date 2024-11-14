@@ -23,8 +23,8 @@ function login(event) {
         .then(resp => resp.json())
         .then(res => {
             if (res.idToken) {
-                // Successful login, redirect user to books.html
-                window.location.href = 'dashboard.html';
+                window.location.href = "dashboard.html";
+
             } else {
                 // Handle login error
                 alert(res.error.message || "Login failed");
