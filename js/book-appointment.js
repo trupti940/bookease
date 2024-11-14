@@ -51,14 +51,13 @@ const filterServicesByCategory = (category) => {
 };
 
 const populateCategoryDropdown = () => {
-  // Add "All Services" at the top of the dropdown
   const allServicesButton = document.createElement("button");
   allServicesButton.textContent = "All Services";
   allServicesButton.onclick = () => {
     filteredServices = services;
     displayServices(filteredServices);
-    categoryDropdown.style.display = "none"; // Close dropdown after selection
-    document.getElementById("service-grid").style.marginTop = "0"; // Reset grid margin
+    categoryDropdown.style.display = "none"; 
+    document.getElementById("service-grid").style.marginTop = "0"; 
   };
   categoryDropdown.appendChild(allServicesButton);
 
@@ -68,39 +67,37 @@ const populateCategoryDropdown = () => {
     button.textContent = category;
     button.onclick = () => {
       filterServicesByCategory(category);
-      categoryDropdown.style.display = "none"; // Close dropdown after selection
-      document.getElementById("service-grid").style.marginTop = "200px"; // Push grid down
+      categoryDropdown.style.display = "none"; 
+      document.getElementById("service-grid").style.marginTop = "200px"; 
     };
     categoryDropdown.appendChild(button);
   });
 };
 
 const toggleCategoryDropdown = () => {
-  // Toggle dropdown visibility
   categoryDropdown.style.display = categoryDropdown.style.display === "block" ? "none" : "block";
 
-  // Adjust the margin of the grid when dropdown is visible
   if (categoryDropdown.style.display === "block") {
-    document.getElementById("service-grid").style.marginTop = "200px"; // Push the grid down
+    document.getElementById("service-grid").style.marginTop = "200px"; 
   } else {
-    document.getElementById("service-grid").style.marginTop = "0"; // Reset the grid margin
+    document.getElementById("service-grid").style.marginTop = "0"; 
   }
 };
 
 servicesBtn.addEventListener("click", (e) => {
   toggleCategoryDropdown();
-  e.stopPropagation(); // Prevent the click event from propagating to the body
+  e.stopPropagation(); 
 });
 
 const hideCategoryDropdown = () => {
   categoryDropdown.style.display = "none";
 };
 
-// Close the dropdown if clicked anywhere outside
+
 document.addEventListener("click", (e) => {
   if (!categoryDropdown.contains(e.target) && e.target !== servicesBtn) {
     hideCategoryDropdown();
-    document.getElementById("service-grid").style.marginTop = "0"; // Reset grid margin when clicked outside
+    document.getElementById("service-grid").style.marginTop = "0"; 
   }
 });
 

@@ -1,0 +1,410 @@
+[
+  {
+    "id": 1,
+    "image": "https://img.freepik.com/free-vector/doctor-examining-patient-clinic-illustrated_23-2148856559.jpg?t=st=1731599220~exp=1731602820~hmac=45aaa42df4c30d573ddb7ce854e0df4b9f17c6bf96bbafd121ce092c8bc1657f&w=996",
+    "title": "General Health Check-up",
+    "description": "A comprehensive health check-up covering all vital parameters.",
+    "charges": 150,
+    "location": "New York",
+    "category": "Health & Wellness"
+  },
+  {
+    "id": 2,
+    "image": "https://img.freepik.com/free-vector/psychological-help-landing-page_52683-45773.jpg?ga=GA1.1.747195836.1731425484&semt=ais_hybrid",
+    "title": "Mental Health Counseling",
+    "description": "One-on-one session with a licensed counselor.",
+    "charges": 100,
+    "location": "Los Angeles",
+    "category": "Health & Wellness"
+  },
+  {
+    "id": 3,
+    "image": "https://img.freepik.com/free-vector/nutritionist-recommendations-cartoon-composition-with-dietitian-appointment-healthy-meal-fruit-vegetables-supplements-diet-planning_1284-59044.jpg?t=st=1731599220~exp=1731602820~hmac=8ece849bd235056002a2051865788c5f035b38825c52993b819a88fec8c884c7&w=740",
+    "title": "Nutrition Consultation",
+    "description": "Personalized diet and nutrition planning.",
+    "charges": 90,
+    "location": "Chicago",
+    "category": "Health & Wellness"
+  },
+  {
+    "id": 4,
+    "image": "https://img.freepik.com/free-vector/cartoon-style-dental-care-concept_23-2148984413.jpg?ga=GA1.1.747195836.1731425484&semt=ais_hybrid",
+    "title": "Dental Check-up",
+    "description": "Routine dental examination and cleaning.",
+    "charges": 80,
+    "location": "Denver",
+    "category": "Health & Wellness"
+  },
+  {
+    "id": 5,
+    "image": "https://img.freepik.com/free-vector/male-ophthalmologist-checking-woman-eyesight_74855-4432.jpg?ga=GA1.1.747195836.1731425484&semt=ais_hybrid",
+    "title": "Vision Test",
+    "description": "Full vision examination with an optometrist.",
+    "charges": 40,
+    "location": "Seattle",
+    "category": "Health & Wellness"
+  },
+
+  {
+    "id": 6,
+    "image": "https://img.freepik.com/free-vector/people-office-background_23-2148091441.jpg?ga=GA1.1.747195836.1731425484&semt=ais_hybrid",
+    "title": "Business Strategy Consultation",
+    "description": "Expert advice on business growth strategies.",
+    "charges": 200,
+    "location": "New York",
+    "category": "Professional Services"
+  },
+  {
+    "id": 7,
+    "image": "https://img.freepik.com/free-vector/legal-advisers-concept-illustration_114360-20398.jpg?ga=GA1.1.747195836.1731425484&semt=ais_hybrid",
+    "title": "Legal Consultation",
+    "description": "Consult with a lawyer on legal matters.",
+    "charges": 300,
+    "location": "San Francisco",
+    "category": "Professional Services"
+  },
+  {
+    "id": 8,
+    "image": "https://img.freepik.com/free-vector/real-estate-agency-interior-flat-composition-with-realtor-helping-family-couple-buyers-choosing-first-house_1284-61532.jpg?ga=GA1.1.747195836.1731425484&semt=ais_hybrid",
+    "title": "Real Estate Advisory",
+    "description": "Get insights on property investment and sales.",
+    "charges": 250,
+    "location": "Los Angeles",
+    "category": "Professional Services"
+  },
+  {
+    "id": 9,
+    "image": "https://img.freepik.com/free-vector/businesspeople-office_24908-56685.jpg?ga=GA1.1.747195836.1731425484&semt=ais_hybrid",
+    "title": "Financial Planning Session",
+    "description": "Personalized financial planning and investment advice.",
+    "charges": 180,
+    "location": "Chicago",
+    "category": "Professional Services"
+  },
+  {
+    "id": 10,
+    "image": "https://img.freepik.com/free-vector/team-work-concept-with-flat-design_23-2147837417.jpg?ga=GA1.1.747195836.1731425484&semt=ais_hybrid",
+    "title": "Marketing Strategy Consultation",
+    "description": "Build a marketing strategy for your business.",
+    "charges": 220,
+    "location": "Boston",
+    "category": "Professional Services"
+  },
+
+  {
+    "id": 11,
+    "image": "https://img.freepik.com/free-vector/flat-international-day-women-girls-science-illustration_23-2151167901.jpg?ga=GA1.1.747195836.1731425484&semt=ais_hybrid",
+    "title": "Math Tutoring Session",
+    "description": "Private tutoring for mathematics at all levels.",
+    "charges": 50,
+    "location": "New York",
+    "category": "Education & Tutoring"
+  },
+  {
+    "id": 12,
+    "image": "https://img.freepik.com/free-vector/hand-drawn-translation-services-landing-page_23-2151168745.jpg?ga=GA1.1.747195836.1731425484&semt=ais_hybrid",
+    "title": "Language Class - Spanish",
+    "description": "Learn Spanish with an experienced tutor.",
+    "charges": 40,
+    "location": "Chicago",
+    "category": "Education & Tutoring"
+  },
+  {
+    "id": 13,
+    "image": "https://img.freepik.com/free-vector/choice-worker-theme_23-2148617959.jpg?ga=GA1.1.747195836.1731425484&semt=ais_hybrid",
+    "title": "College Application Guidance",
+    "description": "Get help with college applications and essays.",
+    "charges": 90,
+    "location": "Boston",
+    "category": "Education & Tutoring"
+  },
+  {
+    "id": 14,
+    "image": "https://img.freepik.com/free-vector/cartoon-school-chemistry-teacher-classrom_107791-14520.jpg?ga=GA1.1.747195836.1731425484&semt=ais_hybrid",
+    "title": "Science Tutoring",
+    "description": "Tutoring sessions covering various science topics.",
+    "charges": 60,
+    "location": "Los Angeles",
+    "category": "Education & Tutoring"
+  },
+  {
+    "id": 15,
+    "image": "https://img.freepik.com/free-psd/3d-rendering-student-character_23-2151691041.jpg?ga=GA1.1.747195836.1731425484&semt=ais_hybrid",
+    "title": "SAT Preparation Class",
+    "description": "Prep for SAT with personalized classes.",
+    "charges": 75,
+    "location": "San Francisco",
+    "category": "Education & Tutoring"
+  },
+
+  {
+    "id": 16,
+    "image": "https://img.freepik.com/free-vector/online-personal-trainer_23-2148512087.jpg?ga=GA1.1.747195836.1731425484&semt=ais_hybrid",
+    "title": "Personal Training Session",
+    "description": "One-on-one workout session with a fitness trainer.",
+    "charges": 50,
+    "location": "Miami",
+    "category": "Fitness & Sports"
+  },
+  {
+    "id": 17,
+    "image": "https://img.freepik.com/free-vector/flat-design-online-yoga-class-concept_23-2148566604.jpg?ga=GA1.1.747195836.1731425484&semt=ais_hybrid",
+    "title": "Yoga Class",
+    "description": "Join a group yoga session for relaxation and fitness.",
+    "charges": 30,
+    "location": "Seattle",
+    "category": "Fitness & Sports"
+  },
+  {
+    "id": 18,
+    "image": "https://img.freepik.com/free-vector/kids-swimming-pool-class-composition-female-swim-coach-whistles-children-pool-vector-illustration_1284-76207.jpg?ga=GA1.1.747195836.1731425484&semt=ais_hybrid",
+    "title": "Swimming Lesson",
+    "description": "Learn swimming techniques with a professional coach.",
+    "charges": 60,
+    "location": "San Diego",
+    "category": "Fitness & Sports"
+  },
+  {
+    "id": 19,
+    "image": "https://img.freepik.com/free-vector/coach-concept-illustration_114360-5769.jpg?ga=GA1.1.747195836.1731425484&semt=ais_hybrid",
+    "title": "Basketball Coaching",
+    "description": "Private coaching session to improve basketball skills.",
+    "charges": 45,
+    "location": "Chicago",
+    "category": "Fitness & Sports"
+  },
+  {
+    "id": 20,
+    "image": "https://img.freepik.com/free-vector/people-eating-healthy-exercising-regularly_53876-43092.jpg?ga=GA1.1.747195836.1731425484&semt=ais_hybrid",
+    "title": "Nutrition & Fitness Consultation",
+    "description": "Get personalized fitness and nutrition guidance.",
+    "charges": 70,
+    "location": "Austin",
+    "category": "Fitness & Sports"
+  },
+  {
+    "id": 21,
+    "image": "https://img.freepik.com/free-vector/household-renovation-professions-with-men_23-2148655518.jpg?ga=GA1.1.747195836.1731425484&semt=ais_hybrid",
+    "title": "Plumbing Service",
+    "description": "Expert plumbing services for repairs and installations.",
+    "charges": 100,
+    "location": "Los Angeles",
+    "category": "Home & Maintenance Services"
+  },
+  {
+    "id": 22,
+    "image": "https://img.freepik.com/free-vector/hand-drawn-electrician-cartoon-illustration_23-2151046542.jpg?ga=GA1.1.747195836.1731425484&semt=ais_hybrid",
+    "title": "Electrical Repair",
+    "description": "Professional electrical repairs for home and office.",
+    "charges": 120,
+    "location": "New York",
+    "category": "Home & Maintenance Services"
+  },
+  {
+    "id": 23,
+    "image": "https://img.freepik.com/free-vector/construction-workers-flat-composition-poster_1284-18981.jpg?ga=GA1.1.747195836.1731425484&semt=ais_hybrid",
+    "title": "Painting Service",
+    "description": "Interior and exterior painting by experienced painters.",
+    "charges": 200,
+    "location": "Chicago",
+    "category": "Home & Maintenance Services"
+  },
+  {
+    "id": 24,
+    "image": "https://img.freepik.com/free-vector/flat-design-character-vacuuming-house_23-2148265302.jpg?ga=GA1.1.747195836.1731425484&semt=ais_hybrid",
+    "title": "Carpet Cleaning",
+    "description": "Thorough carpet cleaning services for a fresh look.",
+    "charges": 80,
+    "location": "Dallas",
+    "category": "Home & Maintenance Services"
+  },
+  {
+    "id": 25,
+    "image": "https://img.freepik.com/free-vector/furniture-assembly-isometric-illustration_1284-24376.jpg?ga=GA1.1.747195836.1731425484&semt=ais_hybrid",
+    "title": "Furniture Assembly",
+    "description": "Professional assembly services for all types of furniture.",
+    "charges": 50,
+    "location": "San Diego",
+    "category": "Home & Maintenance Services"
+  },
+  {
+    "id": 26,
+    "image": "https://img.freepik.com/free-vector/hand-drawn-photoshoot-cartoon-illustration_23-2151093347.jpg?ga=GA1.1.747195836.1731425484&semt=ais_hybrid",
+    "title": "Photography Session",
+    "description": "Capture memories with a professional photography session.",
+    "charges": 150,
+    "location": "Boston",
+    "category": "Creative & Arts"
+  },
+  {
+    "id": 27,
+    "image": "https://img.freepik.com/free-vector/art-school-banner-with-boy-drawing-canvas_107791-9436.jpg?ga=GA1.1.747195836.1731425484&semt=ais_hybrid",
+    "title": "Painting Workshop",
+    "description": "Learn painting techniques in a guided workshop.",
+    "charges": 40,
+    "location": "Denver",
+    "category": "Creative & Arts"
+  },
+  {
+    "id": 28,
+    "image": "https://img.freepik.com/free-vector/it-yourself-crafting-painting-workshop_23-2148541588.jpg?ga=GA1.1.747195836.1731425484&semt=ais_hybrid",
+    "title": "Craft Class",
+    "description": "Get creative with a hands-on craft-making class.",
+    "charges": 30,
+    "location": "Phoenix",
+    "category": "Creative & Arts"
+  },
+  {
+    "id": 29,
+    "image": "https://img.freepik.com/free-vector/father-asking-kids-keep-silence_74855-6455.jpg?ga=GA1.1.747195836.1731425484&semt=ais_hybrid",
+    "title": "Music Lesson",
+    "description": "Learn to play an instrument with a skilled instructor.",
+    "charges": 50,
+    "location": "Nashville",
+    "category": "Creative & Arts"
+  },
+  {
+    "id": 30,
+    "image": "https://img.freepik.com/free-photo/digital-art-style-illustration-graphic-designer_23-2151536952.jpg?ga=GA1.1.747195836.1731425484&semt=ais_hybrid",
+    "title": "Graphic Design Consultation",
+    "description": "Get design tips and guidance for your creative projects.",
+    "charges": 70,
+    "location": "Atlanta",
+    "category": "Creative & Arts"
+  },
+  {
+    "id": 31,
+    "image": "https://img.freepik.com/free-vector/laptop-repair-with-electronics-technology-work-symbols_98292-7823.jpg?ga=GA1.1.747195836.1731425484&semt=ais_hybrid",
+    "title": "Computer Repair",
+    "description": "Expert repair services for computers and laptops.",
+    "charges": 90,
+    "location": "Portland",
+    "category": "Technology & IT Support"
+  },
+  {
+    "id": 32,
+    "image": "https://img.freepik.com/free-vector/web-development-seo-concept-design-cartoon-character-flat-style_1362-164.jpg?ga=GA1.1.747195836.1731425484&semt=ais_hybrid",
+    "title": "Website Development Consultation",
+    "description": "Get advice on building and improving your website.",
+    "charges": 75,
+    "location": "San Jose",
+    "category": "Technology & IT Support"
+  },
+  {
+    "id": 33,
+    "image": "https://img.freepik.com/free-vector/hand-drawn-flat-design-homepage-illustration_23-2149258059.jpg?ga=GA1.1.747195836.1731425484&semt=ais_hybrid",
+    "title": "Software Installation",
+    "description": "Professional installation services for software programs.",
+    "charges": 40,
+    "location": "Baltimore",
+    "category": "Technology & IT Support"
+  },
+  {
+    "id": 34,
+    "image": "https://img.freepik.com/free-vector/steal-data-cyber-attack-concept_23-2148535772.jpg?ga=GA1.1.747195836.1731425484&semt=ais_hybrid",
+    "title": "Virus Removal Service",
+    "description": "Remove malware and secure your computer.",
+    "charges": 60,
+    "location": "Orlando",
+    "category": "Technology & IT Support"
+  },
+  {
+    "id": 35,
+    "image": "https://img.freepik.com/free-vector/hard-drive-concept-illustration_114360-9821.jpg?ga=GA1.1.747195836.1731425484&semt=ais_hybrid",
+    "title": "Data Recovery Service",
+    "description": "Recover lost data from your computer or hard drive.",
+    "charges": 100,
+    "location": "Detroit",
+    "category": "Technology & IT Support"
+  },
+  {
+    "id": 36,
+    "image": "https://img.freepik.com/free-vector/deejay-illustration-background_1152-96.jpg?ga=GA1.1.747195836.1731425484&semt=ais_hybrid",
+    "title": "DJ Service",
+    "description": "Professional DJ for weddings, parties, and events.",
+    "charges": 200,
+    "location": "Las Vegas",
+    "category": "Events & Entertainment"
+  },
+  {
+    "id": 37,
+    "image": "https://img.freepik.com/free-vector/catering-orthogonal-composition_1284-20951.jpg?ga=GA1.1.747195836.1731425484&semt=ais_hybrid",
+    "title": "Catering Service",
+    "description": "Delicious food catering for events and gatherings.",
+    "charges": 500,
+    "location": "Philadelphia",
+    "category": "Events & Entertainment"
+  },
+  {
+    "id": 38,
+    "image": "https://img.freepik.com/free-vector/superhero-delivery-man-orthogonal_1284-22513.jpg?ga=GA1.1.747195836.1731425484&semt=ais_hybrid",
+    "title": "Party Planning",
+    "description": "Let us help you plan the perfect party.",
+    "charges": 150,
+    "location": "San Antonio",
+    "category": "Events & Entertainment"
+  },
+  {
+    "id": 39,
+    "image": "https://img.freepik.com/free-vector/couple-photo-booth-concept-illustration_114360-4642.jpg?ga=GA1.1.747195836.1731425484&semt=ais_hybrid",
+    "title": "Photobooth Rental",
+    "description": "Fun photobooth setup for any event.",
+    "charges": 120,
+    "location": "Miami",
+    "category": "Events & Entertainment"
+  },
+  {
+    "id": 40,
+    "image": "https://img.freepik.com/free-vector/wedding-ceremony-evening-sunset-setup-with-arch_107791-27774.jpg?ga=GA1.1.747195836.1731425484&semt=ais_hybrid",
+    "title": "Event Decoration",
+    "description": "Beautiful decor services for weddings and events.",
+    "charges": 300,
+    "location": "Charlotte",
+    "category": "Events & Entertainment"
+  },
+  {
+    "id": 41,
+    "image": "https://img.freepik.com/free-vector/woman-walking-dog-outdoors_23-2148533345.jpg?ga=GA1.1.747195836.1731425484&semt=ais_hybrid",
+    "title": "Dog Walking",
+    "description": "Daily dog walking services for your pet.",
+    "charges": 20,
+    "location": "Austin",
+    "category": "Pet Care"
+  },
+  {
+    "id": 42,
+    "image": "https://img.freepik.com/free-vector/cartoon-style-grooming-background_52683-79905.jpg?ga=GA1.1.747195836.1731425484&semt=ais_hybrid",
+    "title": "Pet Grooming",
+    "description": "Grooming services to keep your pet looking great.",
+    "charges": 50,
+    "location": "Seattle",
+    "category": "Pet Care"
+  },
+  {
+    "id": 43,
+    "image": "https://img.freepik.com/free-vector/pet-veterinary_24908-57957.jpg?ga=GA1.1.747195836.1731425484&semt=ais_hybrid",
+    "title": "Pet Sitting",
+    "description": "Reliable pet sitting while you're away.",
+    "charges": 30,
+    "location": "Portland",
+    "category": "Pet Care"
+  },
+  {
+    "id": 44,
+    "image": "https://img.freepik.com/free-vector/vet-clinic-flat-orthogonal-poster_1284-18478.jpg?ga=GA1.1.747195836.1731425484&semt=ais_hybrid",
+    "title": "Veterinary Consultation",
+    "description": "Consultation for your pet's health and wellness.",
+    "charges": 70,
+    "location": "Sacramento",
+    "category": "Pet Care"
+  },
+  {
+    "id": 45,
+    "image": "https://img.freepik.com/free-vector/everyday-scene-with-pets_23-2148517305.jpg?ga=GA1.1.747195836.1731425484&semt=ais_hybrid",
+    "title": "Pet Training",
+    "description": "Training services for dogs and other pets.",
+    "charges": 60,
+    "location": "Columbus",
+    "category": "Pet Care"
+  }
+]
