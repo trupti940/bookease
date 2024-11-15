@@ -63,9 +63,21 @@ const displayServices = (servicesToDisplay) => {
 
 // Navigate to service page with encoded data
 const sendToServicePage = (index) => {
-  const encodedData = encodeURIComponent(JSON.stringify(index));
-  window.location.href = `serviceDetail.html?id=${encodedData}`;
+  const service = services[index];
+  const serviceData = {
+    id: service.id,
+    title: service.title,
+    image: service.image || "https://via.placeholder.com/250", // Fallback image if none exists
+    description: service.description,
+    charges: service.charges,
+    location: service.location,
+    category: service.category
+  };
+  
+  const encodedData = encodeURIComponent(JSON.stringify(serviceData));
+  window.location.href = `serviceDetail.html?data=${encodedData}`;
 };
+
 
 // Filter services by selected category
 const filterServicesByCategory = (category) => {
