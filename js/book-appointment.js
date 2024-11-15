@@ -19,6 +19,7 @@ const categories = [
   "Pet Care",
 ];
 
+// Fetch services from the database
 const fetchServices = () => {
   fetch("https://book-ease-73f27-default-rtdb.firebaseio.com/services.json")
     .then((response) => response.json())
@@ -31,35 +32,42 @@ const fetchServices = () => {
     .catch((error) => console.error("Error fetching data: ", error));
 };
 
+// Render services as Bootstrap cards
 const displayServices = (servicesToDisplay) => {
   serviceGrid.innerHTML = "";
   servicesToDisplay.forEach((service, index) => {
-    const serviceCard = document.createElement("div");
-    serviceCard.classList.add("service-card");
-    serviceCard.innerHTML = `
-      <img src="${service.image}" alt="${service.title}" />
-      <div class="service-details">
-        <h3>${service.title}</h3>
-        <p>${service.description}</p>
-        <div class="location">
-          <span>📍</span>
-          <span>${service.location}</span>
+    const card = document.createElement("div");
+    card.classList.add("col-lg-4", "col-md-6", "col-sm-12", "mb-4"); // Responsive columns
+
+    card.innerHTML = `
+      <div class="card h-100 service-card">
+        <img src="${
+          service.image || "https://via.placeholder.com/250"
+        }" class="card-img-top" alt="${service.title}">
+        <div class="card-body">
+          <h5 class="card-title">${service.title}</h5>
+          <p class="card-text">${service.description}</p>
+          <p class="price">$${service.charges}</p>
+          <div class="location">
+            <span>📍</span>
+            <span>${service.location}</span>
+          </div>
         </div>
-        <p class="price">$${service.charges}</p>
       </div>
     `;
-    serviceCard.addEventListener("click", () => sendToServicePage(index));
-    serviceGrid.appendChild(serviceCard);
+
+    card.addEventListener("click", () => sendToServicePage(index));
+    serviceGrid.appendChild(card);
   });
 };
 
-// send id to service page
+// Navigate to service page with encoded data
 const sendToServicePage = (index) => {
   const encodedData = encodeURIComponent(JSON.stringify(index));
-
-  window.location.href = `service.html?id=${encodedData}`;
+  window.location.href = `serviceDetail.html?id=${encodedData}`;
 };
 
+// Filter services by selected category
 const filterServicesByCategory = (category) => {
   filteredServices = services.filter(
     (service) => service.category === category
@@ -67,64 +75,55 @@ const filterServicesByCategory = (category) => {
   displayServices(filteredServices);
 };
 
+// Populate category dropdown
 const populateCategoryDropdown = () => {
+  categoryDropdown.innerHTML = "";
+
   const allServicesButton = document.createElement("button");
   allServicesButton.textContent = "All Services";
+  allServicesButton.classList.add("dropdown-item");
   allServicesButton.onclick = () => {
     filteredServices = services;
     displayServices(filteredServices);
-    categoryDropdown.style.display = "none"; 
-    document.getElementById("service-grid").style.marginTop = "0"; 
+    categoryDropdown.style.display = "none";
   };
   categoryDropdown.appendChild(allServicesButton);
 
-  // Add categories to the dropdown
   categories.forEach((category) => {
     const button = document.createElement("button");
     button.textContent = category;
+    button.classList.add("dropdown-item");
     button.onclick = () => {
       filterServicesByCategory(category);
-      categoryDropdown.style.display = "none"; 
-      document.getElementById("service-grid").style.marginTop = "200px";
+      categoryDropdown.style.display = "none";
     };
     categoryDropdown.appendChild(button);
   });
 };
 
+// Toggle category dropdown
 const toggleCategoryDropdown = () => {
   categoryDropdown.style.display =
     categoryDropdown.style.display === "block" ? "none" : "block";
-
-
-  if (categoryDropdown.style.display === "block") {
-    document.getElementById("service-grid").style.marginTop = "200px"; 
-  } else {
-    document.getElementById("service-grid").style.marginTop = "0"; 
-  }
 };
 
 servicesBtn.addEventListener("click", (e) => {
   toggleCategoryDropdown();
-  e.stopPropagation(); 
+  e.stopPropagation();
 });
 
-const hideCategoryDropdown = () => {
-  categoryDropdown.style.display = "none";
-};
-
-// Close the dropdown if clicked anywhere outside
+// Close dropdown if clicked outside
 document.addEventListener("click", (e) => {
   if (!categoryDropdown.contains(e.target) && e.target !== servicesBtn) {
-    hideCategoryDropdown();
-    document.getElementById("service-grid").style.marginTop = "0"; 
+    categoryDropdown.style.display = "none";
   }
 });
 
+// Debounce search input for suggestions
 let debounceTimer;
 searchBar.addEventListener("input", (e) => {
   const query = e.target.value.toLowerCase();
 
-  // Debouncing search input
   clearTimeout(debounceTimer);
   debounceTimer = setTimeout(() => {
     if (query) {
@@ -137,9 +136,12 @@ searchBar.addEventListener("input", (e) => {
     } else {
       searchSuggestions.style.display = "none";
     }
-  }, 300);
+  }, 300); // Delay to allow for debouncing
 });
 
+
+
+// Show search suggestions
 const showSearchSuggestions = (suggestions) => {
   searchSuggestions.innerHTML = "";
   suggestions.forEach((suggestion) => {
@@ -153,7 +155,8 @@ const showSearchSuggestions = (suggestions) => {
     };
     searchSuggestions.appendChild(suggestionItem);
   });
-  searchSuggestions.style.display = "block";
+  searchSuggestions.style.display = "block"; // Show suggestions
 };
 
+// Initialize fetch on DOM load
 document.addEventListener("DOMContentLoaded", fetchServices);
