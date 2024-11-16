@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard - Scheduling App</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="../css/dashboard.css">
+    <link rel="stylesheet" href="../css/availability.css">
+    <link href="https://cdn.jsdelivr.net/npm/fullcalendar@6.1.8/index.global.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+</head>
+
+<body>
+
+    <div class="d-flex" id="wrapper">
+        <!-- Sidebar -->
+        <div class="border-end bg-light sidebar" id="sidebar-wrapper">
+            <div class="sidebar-heading text-center py-4 primary-text fs-4 fw-bold text-uppercase border-bottom">
+                <img width="125px"
+                    src="https://bookease.com/hosted/images/2c/3ef3a3daaa41a2b547e27f1b997c4b/BE_nav_logo_v3.png"
+                    class="me-2" alt="Logo">
+            </div>
+            <div class="list-group list-group-flush">
+                <a href="dashboard.html"
+                    class="list-group-item list-group-item-action bg-transparent second-text fw-bold">
+                    <span class="material-icons me-2">home</span>Dashboard
+                </a>
+                <a href="book-appointment.html"
+                    class="list-group-item list-group-item-action bg-transparent second-text fw-bold">
+                    <span class="material-icons me-2">event</span>Book Appointment
+                </a>
+                <a href="availability.html" class="list-group-item list-group-item-action bg-transparent second-text fw-bold">
+                    <span class="material-icons me-2">access_time</span>Availability
+                </a>
+                <a href="notification.html"
+                    class="list-group-item list-group-item-action bg-transparent second-text fw-bold">
+                    <span class="material-icons me-2">notifications</span>Notifications
+                </a>
+                <a href="#" class="list-group-item list-group-item-action bg-transparent second-text fw-bold">
+                    <span class="material-icons me-2">analytics</span>Reports
+                </a>
+                <a href="my-appointments.html"
+                    class="list-group-item list-group-item-action bg-transparent second-text fw-bold">
+                    <span class="material-icons me-2">event_available</span>My Appointments
+                </a>
+                <a href="#" class="list-group-item list-group-item-action bg-transparent text-danger fw-bold">
+                    <span class="material-icons me-2">exit_to_app</span>Logout
+                </a>
+            </div>
+        </div>
+        <!-- /#sidebar-wrapper -->
+
+        <!-- Page Content -->
+        <div id="page-content-wrapper">
+            <nav class="navbar navbar-expand-lg navbar-light bg-transparent py-4 px-4" id="top-page-name">
+                <div class="d-flex align-items-center">
+                    <button class="btn toggle-btn me-3" id="menu-toggle"><span
+                            class="material-icons">menu</span></button>
+                    <h2 class="fs-2 m-0">Dashboard</h2>
+                </div>
+            </nav>
+
+            <div class="container-fluid px-4" id="page-container">
+                <div class="row">
+                    <!-- Left Section: Appointment Slots -->
+                    <div class="col-lg-4 mb-4">
+                        <div class="card shadow-sm">
+                            <div class="card-header bg-primary text-white">
+                                <h5 class="mb-0">Your Appointments</h5>
+                            </div>
+                            <div class="card-body" id="appointments-container">
+                                <p class="text-center">Loading...</p>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Right Section: Calendar -->
+                    <div class="col-lg-8">
+                        <div class="card shadow-sm">
+                            <div class="card-header bg-primary text-white">
+                                <h5 class="mb-0">Calendar</h5>
+                            </div>
+                            <div class="card-body">
+                                <div id="calendar"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Modal for Appointment Details -->
+                    <div class="modal fade" id="appointmentModal" tabindex="-1" aria-labelledby="appointmentModalLabel"
+                        aria-hidden="true">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title" id="appointmentModalLabel">Appointment Details</h5>
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                        aria-label="Close"></button>
+                                </div>
+                                <div class="modal-body">
+                                    <h6 id="appointmentTitle"></h6>
+                                    <p><strong>Date:</strong> <span id="appointmentDate"></span></p>
+                                    <p><strong>Time:</strong> <span id="appointmentTime"></span></p>
+                                    <p><strong>Location:</strong> <span id="appointmentLocation"></span></p>
+                                    <p><strong>Description:</strong> <span id="appointmentDescription"></span></p>
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-secondary"
+                                        data-bs-dismiss="modal">Close</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+        <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/fullcalendar@6.1.8/index.global.min.js"></script>
+        <script src="../js/dashboard.js"></script>
+        <script src="../js/availability.js"></script>
+</body>
+
+</html>
