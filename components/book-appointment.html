@@ -1,28 +1,79 @@
-<!-- this page for rendering the cards  -->
-
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Service Showcase</title>
-  <link rel="stylesheet" href="../css/book-appointment.css" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dashboard - Scheduling App</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="../css/dashboard.css">
+  <link rel="stylesheet" href="../css/book-appointment.css">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 </head>
+
 <body>
 
-  <!-- Services and Search buttons -->
-  <div id="buttons-container">
-    <button id="services-btn">All Services</button>
-    <div id="category-dropdown" class="dropdown-content"></div>
-    <div id="search-container">
-      <input type="text" id="search-bar" placeholder="Search services" />
-      <div id="search-suggestions" class="suggestions-list"></div>
+  <div class="d-flex" id="wrapper">
+    <!-- Sidebar -->
+    <div class="border-end bg-light sidebar" id="sidebar-wrapper">
+      <div class="sidebar-heading text-center py-4 primary-text fs-4 fw-bold text-uppercase border-bottom">
+        <img width="125px" src="https://bookease.com/hosted/images/2c/3ef3a3daaa41a2b547e27f1b997c4b/BE_nav_logo_v3.png"
+          class="me-2" alt="Logo">
+      </div>
+      <div class="list-group list-group-flush">
+        <a href="dashboard.html" class="list-group-item list-group-item-action bg-transparent second-text fw-bold">
+          <span class="material-icons me-2">home</span>Dashboard
+        </a>
+        <a href="book-appointment.html"
+          class="list-group-item list-group-item-action bg-transparent second-text fw-bold">
+          <span class="material-icons me-2">event</span>Book Appointment
+        </a>
+        <a href="#" class="list-group-item list-group-item-action bg-transparent second-text fw-bold">
+          <span class="material-icons me-2">access_time</span>Availability
+        </a>
+        <a href="#" class="list-group-item list-group-item-action bg-transparent second-text fw-bold">
+          <span class="material-icons me-2">notifications</span>Notifications
+        </a>
+        <a href="#" class="list-group-item list-group-item-action bg-transparent second-text fw-bold">
+          <span class="material-icons me-2">analytics</span>Reports
+        </a>
+        <a href="#" class="list-group-item list-group-item-action bg-transparent second-text fw-bold">
+          <span class="material-icons me-2">event_available</span>My Appointments
+        </a>
+        <a href="#" class="list-group-item list-group-item-action bg-transparent text-danger fw-bold">
+          <span class="material-icons me-2">exit_to_app</span>Logout
+        </a>
+      </div>
+    </div>
+    <!-- /#sidebar-wrapper -->
+
+    <!-- Page Content -->
+    <div id="page-content-wrapper">
+      <nav class="navbar navbar-expand-lg navbar-light bg-transparent py-4 px-4" id="top-page-name">
+        <div class="d-flex align-items-center">
+          <button class="btn toggle-btn me-3" id="menu-toggle"><span class="material-icons">menu</span></button>
+          <h2 class="fs-2 m-0">Dashboard</h2>
+        </div>
+      </nav>
+
+      <div class="container py-4" id="page-container">
+        <div class="row mb-5">
+          <div class="col-12 d-flex justify-content-between align-items-center">
+            <button class="btn btn-primary" id="services-btn">All Services</button>
+            <input type="text" id="search-bar" class="form-control w-50" placeholder="Search services">
+          </div>  
+        </div>
+        <div id="category-dropdown" class="dropdown-menu"></div>
+        <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4" id="service-grid"></div>
+      </div>
     </div>
   </div>
 
-  <!-- Service Grid -->
-  <section id="service-grid" class="grid-container"></section>
-
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="../js/dashboard.js"></script>
   <script src="../js/book-appointment.js"></script>
+
 </body>
+
 </html>
