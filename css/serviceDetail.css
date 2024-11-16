@@ -4,6 +4,7 @@ body {
     margin: 0;
     padding: 0;
     background-color: #f7f7f7;
+    height: 100vh;
 }
 
 .container {
@@ -15,45 +16,7 @@ body {
     gap: 20px;
 }
 
-/* Left Section */
-.left-section {
-    width: 60%;
-}
 
-.owner-info {
-    display: flex;
-    align-items: center;
-    margin-bottom: 20px;
-}
-
-.owner-info img {
-    width: 50px;
-    height: 50px;
-    border-radius: 50%;
-    margin-right: 15px;
-}
-
-.owner-info div {
-    font-size: 16px;
-}
-
-.content-section {
-    background-color: #fff;
-    border-radius: 8px;
-    padding: 20px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-}
-
-.content-section h3 {
-    margin-top: 0;
-}
-
-.map {
-    height: 500px;
-    background-color: #e0e0e0;
-    border-radius: 8px;
-    margin-top: 20px;
-}
 
 /* Right Section */
 .right-section {
