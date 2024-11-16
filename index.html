@@ -1,1 +1,1264 @@
-<!-- home page code here  -->
+<!DOCTYPE html> 
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Easy Schedule - Appointment Management</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Roboto', sans-serif;
+        }
+        /* Background Gradient */
+        body {
+            background: linear-gradient(135deg, #5b4588);
+            color: #333;
+            line-height: 1.6;
+        }
+        /* Navbar Styling */
+    .navbar {
+      background-color: #40084a;
+      color: white;
+      padding: 1rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+/* Navbar Title Styling */
+.navbar h1 {
+    font-weight: 700;
+    font-size: 1.5rem;
+    margin: 0;
+}
+
+/* Navbar List Styling */
+.navbar ul {
+    list-style: none;
+    display: flex;
+    gap: 1.5rem;
+    margin: 0;
+    padding: 0;
+}
+
+/* Navbar Link Styling */
+.navbar a {
+    color: white;
+    text-decoration: none;
+    font-weight: 500;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    transition: color 0.3s, background-color 0.3s;
+}
+
+/* Navbar Hover Effects */
+.navbar a:hover {
+    color: #fff;
+    background-color: #297d14;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Sign Up / Login Styling */
+.navbar .auth-button {
+    background-color: #fff;
+    color: #40084a;
+    font-weight: 600;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    border: 2px solid #40084a;
+    transition: background-color 0.3s, color 0.3s, box-shadow 0.3s;
+}
+
+.navbar .auth-button:hover {
+    background-color: #297d14;
+    color: #fff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Pop-up Window Styling */
+.modal {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: white;
+    color: #40084a;
+    padding: 2rem;
+    width: 300px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    border-radius: 8px;
+    z-index: 1000;
+}
+
+.modal.show {
+    display: block;
+}
+
+.modal-header {
+    font-size: 1.25rem;
+    margin-bottom: 1rem;
+}
+
+.modal-close {
+    color: #40084a;
+    font-size: 1.2rem;
+    position: absolute;
+    right: 1rem;
+    top: 1rem;
+    cursor: pointer;
+}
+
+        /* Header Styling */
+        .header {
+            text-align: center;
+            padding: 4rem 2rem;
+            background-image: url('./assets/images/image.jpg');;
+            border-radius: 10px;
+            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+            max-width: 600px;
+            margin: 2rem auto;
+        }
+        .header h2 {
+            font-size: 3rem;
+            color: rgba(226,218,242);
+            font-weight: 700;
+            margin-bottom: 1rem;
+        }
+        .header p {
+            font-size: 1.2rem;
+            margin: 1rem 0;
+        }
+        .cta-button {
+            background-color: #32964e;
+            color: #40084a;
+            padding: 1rem 2rem;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1rem;
+            margin-top: 1rem;
+            transition: background-color 0.3s;
+        }
+        .cta-button:hover {
+            background-color: #e64a19;
+        }
+        /* Features Section */
+        .features {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            padding: 4rem 2rem;
+        }
+        .feature-box {
+            flex: 1;
+            min-width: 280px;
+            margin: 1rem;
+            padding: 2.5rem;
+            background: linear-gradient(135deg,rgba(226,218,242), #b58abb);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+            text-align: center;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        .feature-box:hover {
+            background-color: #28a745; /* Green color on hover */
+            color: rgb(123, 11, 81); /* White text on hover */
+            transform: translateY(-10px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        .feature-box:hover i {
+            color: #297d14; /* White icons on hover */
+        }
+
+        
+
+        
+        /* Footer Section */
+        .footer {
+            background: linear-gradient(135deg, #40084a, #000428);
+            color: white;
+            padding: 3rem 2rem;
+            font-size: 0.9rem;
+        }
+        .footer-content {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        .footer-column {
+            flex: 1;
+            min-width: 250px;
+            margin: 1rem;
+        }
+        .footer-column h4 {
+            font-size: 1.2rem;
+            color: #297d14;
+            margin-bottom: 1rem;
+        }
+        .footer-column ul {
+            list-style: none;
+        }
+        .footer-column ul li {
+            margin-bottom: 0.5rem;
+        }
+        .footer-column ul li a {
+            color: white;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        .footer-column ul li a:hover {
+            color:#297d14;
+        }
+        .social-icons {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin-top: 2rem;
+        }
+        .social-icons a {
+            color: white;
+            font-size: 1.5rem;
+            transition: color 0.3s;
+        }
+        .social-icons a:hover {
+            color: #297d14;
+        }
+        .footer-bottom {
+            text-align: center;
+            margin-top: 2rem;
+            color: #bbb;
+            font-size: 0.85rem;
+        }
+
+        /* Responsive Styles */
+        @media (max-width: 768px) {
+            .navbar ul {
+                flex-direction: column;
+                align-items: center;
+                gap: 0.75rem;
+            }
+            .header h2 {
+                font-size: 2.2rem;
+            }
+            .features {
+                flex-direction: column;
+            }
+            .feature-box {
+                margin: 1.5rem 0;
+            }
+            .footer-content {
+                flex-direction: column;
+                align-items: center;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .navbar {
+                flex-direction: column;
+                text-align: center;
+            }
+            .header h2 {
+                font-size: 1.8rem;
+            }
+            .cta-button {
+                font-size: 0.9rem;
+                padding: 0.75rem 1.5rem;
+            }
+            .features {
+                padding: 2rem 1rem;
+            }
+            .feature-box {
+                padding: 1.5rem;
+            }
+            .footer {
+                padding: 2rem 1rem;
+            }
+        }
+    </style>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</head>
+<body>
+
+    <!-- Navbar -->
+    <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Navbar with Hamburger</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+    
+        /* Navbar styling */
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #40084a;
+            color: white;
+            padding: 1rem 2rem;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+    
+        .navbar h1 {
+            font-size: 1.5rem;
+        }
+    
+        .navbar-links {
+            display: flex;
+        }
+    
+        .navbar-links ul {
+            list-style: none;
+            display: flex;
+            gap: 1.5rem;
+        }
+    
+        .navbar-links ul li a {
+            text-decoration: none;
+            color: white;
+            font-size: 1rem;
+            transition: color 0.3s;
+        }
+    
+        .navbar-links ul li a:hover {
+            color: #297d14;
+            color: white;
+            font-size: 1rem;
+            transition: color 0.3s;
+        }
+    
+        /* Hamburger menu styling */
+        .hamburger-menu {
+            display: none;
+            flex-direction: column;
+            gap: 5px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+    
+        .hamburger-menu span {
+            display: block;
+            width: 25px;
+            height: 3px;
+            background-color: white;
+            border-radius: 2px;
+            transition: transform 0.3s, opacity 0.3s;
+        }
+    
+        /* Hamburger transforms into cross */
+        .hamburger-menu.active span:nth-child(1) {
+            transform: translateY(8px) rotate(45deg);
+        }
+    
+        .hamburger-menu.active span:nth-child(2) {
+            opacity: 0;
+        }
+    
+        .hamburger-menu.active span:nth-child(3) {
+            transform: translateY(-8px) rotate(-45deg);
+        }
+    
+        /* Responsive styles */
+        @media (max-width: 768px) {
+            .hamburger-menu {
+                display: flex;
+            }
+    
+            .navbar-links {
+                display: none;
+                position: absolute;
+                top: 60px;
+                right: 0;
+                background-color: #40084a;
+                width: 100%;
+                padding: 1rem 0;
+                text-align: center;
+                flex-direction: column;
+            }
+    
+            .navbar-links.show {
+                display: flex;
+            }
+        }
+    </style>
+    
+</head>
+<body>
+
+    <nav class="navbar">
+        <h1>BOOK-EASE</h1>
+        <div class="hamburger-menu" aria-label="Toggle menu">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+        <div class="navbar-links">
+            <ul>
+                <li><a href="#home">HOME</a></li>
+                <li><a href="#why-us">WHY US</a></li>
+                <li><a href="#about">ABOUT</a></li>
+                <li><a href="#services">SERVICES</a></li>
+                <li><a href="#customers">CUSTOMERS</a></li>
+                <li><a href="#sign-up/Login">SIGN-UP/LOGIN</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <script>
+        // JavaScript for hamburger menu toggle
+        document.addEventListener("DOMContentLoaded", () => {
+            const hamburger = document.querySelector(".hamburger-menu");
+            const navbarLinks = document.querySelector(".navbar-links");
+
+            hamburger.addEventListener("click", () => {
+                hamburger.classList.toggle("active"); // Animate hamburger to cross
+                navbarLinks.classList.toggle("show"); // Show/hide navbar links
+            });
+        });
+    </script>
+
+</body>
+</html>
+
+
+    <!-- Unified Main Section -->
+    <section id="main-section">
+        <header class="header">
+            <h2>Effortless Appointment Scheduling</h2>
+            <button class="cta-button">Get Started</button>
+        </header>
+    
+        <!-- Features Content -->
+        <div class="features">
+            <div class="feature-box">
+                <h3>
+                    <i class="fas fa-calendar-check"></i> Easy Scheduling
+                </h3>
+                <p>Allow clients to book appointments at their convenience with real-time availability updates.</p>
+            </div>
+            <div class="feature-box">
+                <h3>
+                    <i class="fas fa-bell"></i> Automatic Notifications
+                </h3>
+                <p>Stay updated with notifications for bookings, cancellations, and reminders.</p>
+            </div>
+            <div class="feature-box">
+                <h3>
+                    <i class="fas fa-calendar-alt"></i> Calendar Integration
+                </h3>
+                <p>Integrate with popular calendars like Google, Outlook, and iCal to manage appointments seamlessly.</p>
+            </div>
+            <div class="feature-box">
+                <h3>
+                    <i class="fas fa-link"></i> Customizable Links
+                </h3>
+                <p>Share personalized booking links to streamline client scheduling.</p>
+            </div>
+        </div>
+    
+        <!-- Why Us Section -->
+        <div class="why-us" style="max-width: 900px; margin: 4rem auto; text-align: center;">
+            <h2 style="color: #40084a; font-size: 3rem; font-weight: 700;">WHY CHOOSE US?</h2>
+            <p style="color: #333; font-size: 1.4rem; line-height: 2; margin-bottom: 2rem;">
+                At Easy Schedule, we prioritize user-friendly design, reliability, and efficiency. Our platform simplifies appointment management, saves you time, and enhances client satisfaction.
+            </p>
+            <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 2rem;">
+                <div class="feature-box" style="max-width: 200px; background-color: #f9f9f9; padding: 2rem; border-radius: 10px; box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);">
+                    <h3 style="color: #40084a; font-size: 1.5rem; margin-bottom: 1rem;">
+                        <i class="fas fa-user-shield" style="color: #297d14;"></i> Trusted by Professionals
+                    </h3>
+                    <p style="color: #555; font-size: 1.2rem; line-height: 1.6;">
+                        Join thousands of businesses who rely on Easy Schedule for seamless appointment management.
+                    </p>
+                </div>
+                <div class="feature-box" style="max-width: 200px; background-color: #f9f9f9; padding: 2rem; border-radius: 10px; box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);">
+                    <h3 style="color: #40084a; font-size: 1.5rem; margin-bottom: 1rem;">
+                        <i class="fas fa-lock" style="color: #297d14;"></i> Top-notch Security
+                    </h3>
+                    <p style="color: #555; font-size: 1.2rem; line-height: 1.6;">
+                        We ensure that your data is protected with industry-leading security measures.
+                    </p>
+                </div>
+                <div class="feature-box" style="max-width: 200px; background-color: #f9f9f9; padding: 2rem; border-radius: 10px; box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);">
+                    <h3 style="color: #40084a; font-size: 1.5rem; margin-bottom: 1rem;">
+                        <i class="fas fa-headset" style="color: #297d14;"></i> Excellent Support
+                    </h3>
+                    <p style="color: #555; font-size: 1.2rem; line-height: 1.6;">
+                        Our dedicated support team is here to help you every step of the way.
+                    </p>
+                </div>
+                
+            </div>
+        </div>
+        <div class="services" style="max-width: 900px; margin: 4rem auto; "></div>
+    <h2 style="color: #40084a; font-size: 3rem; font-weight: 700;text-align: center;">SERVICES</h2>
+    <head>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    </head>
+    
+    <div class="card-container">
+        <!-- Card 1: User Authentication -->
+        <div class="feature-box">
+            <i class="fas fa-user-shield"></i>
+            <h3>User Authentication</h3>
+            <p>Secure and simple sign-up, login, and logout options for users to access their scheduling dashboard.</p>
+        </div>
+
+        <!-- Card 2: Availability Settings -->
+        <div class="feature-box">
+            <i class="fas fa-calendar-check"></i>
+            <h3>Availability Settings</h3>
+            <p>Set your availability for different days and time slots, and customize event types with specific durations.</p>
+        </div>
+
+        <!-- Card 3: Unique Booking Link -->
+        <div class="feature-box">
+            <i class="fas fa-link"></i>
+            <h3>Unique Booking Link</h3>
+            <p>Create a personalized booking link to share with clients, making scheduling quick and easy.</p>
+        </div>
+
+        <!-- Card 4: Appointment Booking -->
+        <div class="feature-box">
+            <i class="fas fa-calendar-alt"></i>
+            <h3>Appointment Booking</h3>
+            <p>Clients can easily view your availability and book appointments with automatic time slot blocking.</p>
+        </div>
+
+        <!-- Card 5: Email Notifications -->
+        <div class="feature-box">
+            <i class="fas fa-envelope"></i>
+            <h3>Email Notifications</h3>
+            <p>Stay informed with email alerts for new bookings, cancellations, and updates.</p>
+        </div>
+
+        <!-- Card 6: Calendar Integration -->
+        <div class="feature-box">
+            <i class="fas fa-sync-alt"></i>
+            <h3>Calendar Integration</h3>
+            <p>Sync your appointments seamlessly with Google Calendar and Outlook.</p>
+        </div>
+
+        <!-- Card 7: Timezone Support -->
+        <div class="feature-box">
+            <i class="fas fa-globe"></i>
+            <h3>Timezone Support</h3>
+            <p>Automatically handle timezones for both you and your clients, ensuring accurate scheduling.</p>
+        </div>
+
+        <!-- Card 8: Recurring Appointments -->
+        <div class="feature-box">
+            <i class="fas fa-redo"></i>
+            <h3>Recurring Appointments</h3>
+            <p>Easily set up and manage recurring appointments for regular clients.</p>
+        </div>
+    </div>
+    <style>
+       /* Basic styling */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f5f5f5;
+    color: #333;
+    padding: 20px;
+}
+
+/* Features Section */
+.features-section {
+    text-align: center;
+}
+
+.features-section h2 {
+    margin-bottom: 2rem;
+    font-size: 2.5rem;
+    color: #40084a;
+}
+
+/* Card Container */
+.card-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+}
+
+/* Feature Box Styling */
+.feature-box {
+    flex: 1;
+    min-width: 300px; 
+    max-width: 350px;
+    margin: 1rem;
+    padding: 2rem 1.5rem;
+    background: linear-gradient(135deg, rgba(226, 218, 242), #b58abb);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15); 
+    border-radius: 15px; 
+    text-align: center;
+    transition: transform 0.3s, box-shadow 0.3s, background-color 0.3s, color 0.3s;
+    cursor: pointer;
+}
+
+/* Icon Styling */
+.feature-box i {
+    font-size: 2rem; /* Larger icon size */
+    color: #40084a;
+    margin-bottom: 1rem;
+}
+
+
+@media (max-width: 768px) {
+    .card-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .feature-box {
+        width: 100%;
+        max-width: 600px; 
+    }
+}
+    </style>
+
+    </section>
+    
+        
+        <!-- ABOUT US SECTION -->
+<div class="about-us">
+    <h2>ABOUT US</h2>
+    <p>
+        At BOOK-EASE, we understand that managing appointments and scheduling meetings can be a time-consuming and frustrating process, often involving endless email exchanges to find a mutually convenient time. That’s why we’ve developed a smart, web-based scheduling solution that streamlines the entire process, making it easier for both businesses and individuals to manage their time effectively.
+    </p>
+
+    <p>
+        Our platform allows users to set their availability, share booking links, and manage appointments seamlessly. With BOOK-EASE, you can create personalized scheduling links, integrate with your favorite calendar services, and even handle recurring meetings — all in one place. Whether you're a consultant, educator, freelancer, or team manager, we help you save valuable time by automating the scheduling process and ensuring there are no double bookings.
+    </p>
+</div>
+
+<!-- CSS for the blurred background image and text overlay -->
+<style>
+    .about-us {
+        position: relative;
+        max-width: 900px;
+        margin: 4rem auto;
+        padding: 3rem;
+        text-align: center;
+        color: white;
+        background-image: url('./assets/images/download.jpg'); 
+        background-size: cover;
+        background-position: center;
+        border-radius: 10px;
+        overflow: hidden; 
+    }
+
+    /* Blurred overlay */
+    .about-us::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: rgba(0, 0, 0, 0.5); /* Dark overlay for better text readability */
+        backdrop-filter: blur(8px); /* Blurs the background image */
+        z-index: 1; /* Ensure the overlay is behind the text */
+    }
+
+    /* Text on top of the blurred background */
+    .about-us h2,
+    .about-us p {
+        position: relative;
+        z-index: 2; /* Ensure text is on top of the overlay */
+        font-weight: 400;
+        color: white;
+    }
+
+    .about-us h2 {
+        font-size: 3rem;
+        font-weight: 700;
+        margin-bottom: 2rem;
+    }
+
+    .about-us p {
+        font-size: 1.3rem;
+        line-height: 1.8;
+        margin-bottom: 2rem;
+    }
+</style>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Testimonials Slider</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: #f4f4f9;
+      }
+      .testimonials-container {
+        width: 80%;
+        margin: 50px auto;
+        overflow: hidden;
+        position: relative;
+      }
+      .testimonials-slider {
+        display: flex;
+        transition: transform 0.5s ease-in-out;
+      }
+      .testimonial-card {
+        flex: 0 0 100%;
+        max-width: 100%;
+        text-align: center;
+        background: #fff;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        padding: 20px;
+        border-radius: 10px;
+      }
+      .testimonial-card img {
+        width: 80px;
+        height: 80px;
+        border-radius: 50%;
+        margin-bottom: 10px;
+      }
+      .testimonial-card h3 {
+        font-size: 18px;
+        color: #333;
+        margin-bottom: 10px;
+      }
+      .testimonial-card p {
+        font-size: 16px;
+        color: #666;
+        margin-bottom: 15px;
+      }
+      .testimonial-card .rating {
+        color: #FFD700;
+        font-size: 20px;
+      }
+      /* Slider navigation */
+      .navigation {
+        position: absolute;
+        top: 50%;
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        transform: translateY(-50%);
+      }
+      .nav-btn {
+        background-color: rgba(0, 0, 0, 0.5);
+        border: none;
+        color: #fff;
+        padding: 10px;
+        cursor: pointer;
+        border-radius: 50%;
+      }
+      .nav-btn:hover {
+        background-color: #333;
+      }
+    </style>
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Testimonials Slider</title>
+        <style>
+            /* Base Styles */
+            body {
+                font-family: Arial, sans-serif;
+                margin: 0;
+                padding: 0;
+                background-color: #eff3ec;
+                color: #40084a;
+            }
+    
+            .testimonial-container {
+                width: 100%;
+                max-width: 800px;
+                margin: 50px auto;
+                text-align: center;
+            }
+    
+            .testimonial-slider {
+                position: relative;
+                overflow: hidden;
+                border-radius: 15px;
+                background-color: white;
+                box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            }
+    
+            .testimonial-cards {
+                display: flex;
+                transition: transform 0.5s ease-in-out;
+            }
+    
+            .testimonial-card {
+                flex: 0 0 100%;
+                padding: 30px;
+                box-sizing: border-box;
+            }
+    
+            .testimonial-image {
+                width: 80px;
+                height: 80px;
+                margin: 0 auto 20px;
+                border-radius: 50%;
+                border: 2px solid #007BFF;
+                overflow: hidden;
+            }
+    
+            .testimonial-image img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+            }
+    
+            .testimonial-name {
+                font-size: 18px;
+                font-weight: bold;
+                margin-bottom: 10px;
+                color: #007BFF;
+            }
+    
+            .testimonial-comment {
+                font-size: 16px;
+                color: #555;
+                margin-bottom: 15px;
+            }
+    
+            .testimonial-rating {
+                color: #FFD700;
+            }
+    
+            /* Navigation Buttons */
+            .nav-buttons {
+                display: flex;
+                justify-content: space-between;
+                position: absolute;
+                width: 100%;
+                top: 50%;
+                transform: translateY(-50%);
+            }
+    
+            .nav-buttons button {
+                background: none;
+                border: none;
+                font-size: 24px;
+                cursor: pointer;
+                padding: 10px;
+                color: #007BFF;
+            }
+    
+            .nav-buttons button:hover {
+                color: #0056b3;
+            }
+    
+            /* Responsive */
+            @media (max-width: 768px) {
+                .testimonial-card {
+                    padding: 20px;
+                }
+    
+                .testimonial-name {
+                    font-size: 16px;
+                }
+    
+                .testimonial-comment {
+                    font-size: 14px;
+                }
+            }
+        </style>
+    </head>
+    <body>
+        <div class="testimonial-container">
+            <h1>What Our Customers Say</h1>
+            <div class="testimonial-slider" id="testimonial-slider">
+                <div class="testimonial-cards">
+                    <!-- Testimonial 1 -->
+                    <div class="testimonial-card">
+                        <div class="testimonial-image">
+                            <img src="./assets/images/p1.jpg" alt="Customer Image">
+                        </div>
+                        <div class="testimonial-name">Mr.teddy</div>
+                        <div class="testimonial-comment">"This scheduling app made managing my appointments effortless! Highly recommend it."</div>
+                        <div class="testimonial-rating">★★★★★</div>
+                    </div>
+                    <!-- Testimonial 2 -->
+                    <div class="testimonial-card">
+                        <div class="testimonial-image">
+                            <img src="./assets/images/p2.jpg" alt="Customer Image">
+                        </div>
+                        <div class="testimonial-name">Leonardo da vincci</div>
+                        <div class="testimonial-comment">"The best scheduling tool I’ve ever used! It saved me hours every week."</div>
+                        <div class="testimonial-rating">★★★★★</div>
+                    </div>
+                    <!-- Testimonial 3 -->
+                    <div class="testimonial-card">
+                        <div class="testimonial-image">
+                            <img src="./assets/images/p3.jpg" alt="Customer Image">
+                        </div>
+                        <div class="testimonial-name">Emily Brown</div>
+                        <div class="testimonial-comment">"Fantastic! Easy to use and very professional-looking booking pages."</div>
+                        <div class="testimonial-rating">★★★★☆</div>
+                    </div>
+                    <div class="testimonial-card">
+                        <div class="testimonial-image">
+                            <img src="./assets/images/p4.jpg" alt="Customer Image">
+                        </div>
+                        <div class="testimonial-name">Chris Evans</div>
+                        <div class="testimonial-comment">"What a time-saver! The app is intuitive, fast, and handles all my scheduling needs in one place. The support team is also incredibly responsive."</div>
+                        <div class="testimonial-rating">★★★★★</div>
+                    </div>
+                    <div class="testimonial-card">
+                        <div class="testimonial-image">
+                            <img src="./assets/images/p5.jpg" alt="Customer Image">
+                        </div>
+                        <div class="testimonial-name">Tony Stark</div>
+                        <div class="testimonial-comment">"The payment integration is a lifesaver! My clients can book and pay at the same time. This has transformed the way I handle bookings."</div>
+                        <div class="testimonial-rating">★★★★★</div>
+                    </div>
+                </div>
+                <div class="nav-buttons">
+                    <button id="prev-btn">&#8249;</button>
+                    <button id="next-btn">&#8250;</button>
+                </div>
+            </div>
+        </div>
+    
+        <script>
+            // JavaScript for Sliding
+            const slider = document.querySelector('.testimonial-cards');
+            const cards = document.querySelectorAll('.testimonial-card');
+            const prevBtn = document.getElementById('prev-btn');
+            const nextBtn = document.getElementById('next-btn');
+            let currentIndex = 0;
+    
+            function updateSlider() {
+                const cardWidth = cards[0].clientWidth;
+                slider.style.transform = `translateX(-${currentIndex * cardWidth}px)`;
+            }
+    
+            nextBtn.addEventListener('click', () => {
+                currentIndex = (currentIndex + 1) % cards.length;
+                updateSlider();
+            });
+    
+            prevBtn.addEventListener('click', () => {
+                currentIndex = (currentIndex - 1 + cards.length) % cards.length;
+                updateSlider();
+            });
+    
+            // Auto-slide functionality
+            setInterval(() => {
+                currentIndex = (currentIndex + 1) % cards.length;
+                updateSlider();
+            }, 5000);
+    
+            // Update slider on resize
+            window.addEventListener('resize', updateSlider);
+        </script>
+    </body>
+    </html>
+<!-- Social Media Buttons -->
+<footer class="footer">
+    <div class="footer-content">
+        <!-- Services Column -->
+        <div class="footer-column">
+            <h4>Link</h4>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#why-us">Why Us</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#contact">Contact Links</a></li>
+                <li><a href="#sign-up/Login">Sign-up/Login</a></li>
+            </ul>
+        </div>
+        <!-- Info Column -->
+        <div class="footer-column">
+            <h4>Info</h4>
+            <p>
+                Scheduling meetings and appointments can be a tedious task, often involving numerous back-and-forth emails to find a mutually convenient time. 
+                Our website aims to develop a web-based scheduling application that allows users to set their availability, share booking links, 
+                and manage appointments seamlessly.
+            </p>
+        </div>
+        <!-- Subscribe Column -->
+        <div class="footer-column">
+            <h4>Subscribe</h4>
+            <div class="subscribe-container">
+                <input type="email" class="email-input" placeholder="Enter email here">
+                <button class="subscribe-btn" onclick="subscribe()">Subscribe</button>
+            </div>
+        </div>
+    </div>
+    <div class="footer-bottom">
+        &copy; 2024 BOOK-EASE. All Rights Reserved.
+    </div>
+
+    <!-- Sticky Social Media Buttons -->
+    <div class="social-icons">
+        <a href="https://facebook.com" target="_blank" class="social-btn facebook" aria-label="Facebook">
+            <i class="fab fa-facebook-f"></i>
+        </a>
+        <a href="https://linkedin.com" target="_blank" class="social-btn linkedin" aria-label="LinkedIn">
+            <i class="fab fa-linkedin-in"></i>
+        </a>
+        <a href="https://instagram.com" target="_blank" class="social-btn instagram" aria-label="Instagram">
+            <i class="fab fa-instagram"></i>
+        </a>
+        <a href="https://twitter.com" target="_blank" class="social-btn twitter" aria-label="Twitter">
+            <i class="fab fa-twitter"></i>
+        </a>
+        <a href="https://youtube.com" target="_blank" class="social-btn youtube" aria-label="YouTube">
+            <i class="fab fa-youtube"></i>
+        </a>
+    </div>
+</footer>
+<style>
+    /* Sticky Social Media Buttons */
+.social-icons {
+    position: fixed;
+    bottom: 2rem;
+    right: 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+    z-index: 1000;
+}
+
+.social-btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50px;
+    height: 50px;
+    background-color: #40084a;
+    border-radius: 50%;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+    text-decoration: none;
+}
+
+.social-btn i {
+    color: white;
+    font-size: 1.5rem;
+    transition: color 0.3s ease;
+}
+
+.social-btn:hover {
+    background-color: #297d14;
+    transform: scale(1.1);
+}
+
+.social-btn:hover i {
+    color: #ffffff;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .social-icons {
+        bottom: 1rem;
+        right: 1rem;
+    }
+    .social-btn {
+        width: 40px;
+        height: 40px;
+    }
+    .social-btn i {
+        font-size: 1.2rem;
+    }
+}
+
+
+/* Reset and basic styles */
+body, ul, p, h4, input, button {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.footer {
+    background-color: #40084a;
+    color: white;
+    padding: 2rem;
+}
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+.footer-column {
+    flex: 1;
+    min-width: 250px;
+    margin: 1rem 0;
+}
+.footer-column h4 {
+    text-align: center;
+    margin-bottom: 1rem;
+    color: white;
+    font-size: 1.3rem;
+    border-bottom: 2px solid #297d14;
+    padding-bottom: 0.5rem;
+}
+.footer-column ul {
+    list-style: none;
+    padding: 0;
+    text-align: center;
+}
+.footer-column ul li {
+    margin: 0.5rem 0;
+}
+.footer-column ul li a {
+    text-decoration: none;
+    color: white;
+    font-size: 1rem;
+    transition: color 0.3s;
+}
+.footer-column ul li a:hover {
+    color: #297d14;
+}
+.footer-column p {
+    text-align: justify;
+    font-size: 0.95rem;
+    line-height: 1.6;
+}
+
+/* Subscribe container */
+.subscribe-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem; /* Space between email input and button */
+}
+.email-input {
+    width: 100%;
+    max-width: 300px;
+    padding: 0.5rem;
+    border: none;
+    border-bottom: 2px solid #fff;
+    background: transparent;
+    color: white;
+    font-size: 1rem;
+    outline: none;
+    transition: border-color 0.3s;
+}
+.email-input:focus {
+    border-color: #297d14;
+}
+/* Subscribe container */
+.subscribe-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem; /* Space between email input and button */
+}
+
+.email-input {
+    width: 100%;
+    max-width: 300px;
+    padding: 0.8rem;
+    border: 2px solid transparent;
+    background: #f5f5f5;
+    color: #40084a;
+    font-size: 1rem;
+    outline: none;
+    border-radius: 8px; /* Smooth rounded corners */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease-in-out;
+}
+
+.email-input::placeholder {
+    color: #bbb; /* Lighter placeholder text for contrast */
+    font-style: italic;
+}
+
+.email-input:focus {
+    background: #fff;
+    border-color: #297d14;
+    box-shadow: 0 6px 12px rgba(41, 125, 20, 0.3);
+}
+
+.subscribe-btn {
+    background-color: #156c27; /* Green base color matching the website */
+    color: white;
+    border: none;
+    padding: 0.75rem 1.5rem;
+    font-size: 1rem;
+    font-weight: bold;
+    border-radius: 8px; /* Rounded corners for a modern look */
+    cursor: pointer;
+    transition: background-color 0.3s, box-shadow 0.3s;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.subscribe-btn:hover {
+    background-color: #124713; /* Lighter green for hover effect */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2); /* Slightly larger shadow */
+}
+
+.subscribe-btn:active {
+    transform: scale(0.98); 
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1); 
+}
+
+.subscribe-btn {
+    background-color: #09390b; /* Green */
+    color: white;
+    border: none;
+    padding: 15px 32px;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: all 0.3s ease; 
+}
+
+/* Hover effect */
+.subscribe-btn:hover {
+    background-color: #09390b; /* Slightly darker green */
+    transform: scale(1.1); /* Slightly increase size */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); 
+}
+
+/* Click effect (active state) */
+.subscribe-btn:active {
+    background-color: #0b4e10; /* Darker green when clicked */
+    transform: scale(0.98); /* Slightly reduce size to simulate pressing effect */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Shadow when pressed */
+}
+
+.footer-bottom {
+    text-align: center;
+    margin-top: 2rem;
+    font-size: 0.85rem;
+    color: #bbb;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .footer-content {
+        flex-direction: column;
+        align-items: center;
+    }
+    .footer-column {
+        text-align: center;
+    }
+}
+</style>
