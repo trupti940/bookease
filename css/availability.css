@@ -1,0 +1,112 @@
+/* Calendar Styling */
+#calendar {
+    background-color: #ffffff; /* White background for better visibility */
+    border: 1px solid #ddd; /* Subtle border */
+    border-radius: 10px; /* Rounded corners */
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    padding: 20px; /* Add some padding */
+}
+
+/* Calendar Header Styling */
+.fc-header-toolbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    background-color: #007bff; /* Primary blue color */
+    color: #ffffff; /* White text */
+    border-radius: 8px 8px 0 0;
+}
+
+.fc-toolbar-title {
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.fc-button {
+    background-color: #ffffff; /* White buttons */
+    color: #007bff; /* Blue text */
+    border: 1px solid #007bff; /* Border to match text */
+    border-radius: 5px; /* Rounded buttons */
+    padding: 5px 10px;
+    transition: all 0.3s ease;
+}
+
+.fc-button:hover {
+    background-color: #007bff; /* Blue background on hover */
+    color: #ffffff; /* White text on hover */
+}
+
+.fc-button-active {
+    background-color: #0056b3; /* Darker blue for active state */
+    color: #ffffff; /* White text */
+}
+
+/* Calendar Day Cells */
+.fc-daygrid-day {
+    background-color: #f9f9f9; /* Light gray background */
+    border: 1px solid #ddd; /* Subtle border */
+    border-radius: 5px; /* Rounded day cells */
+    padding: 10px;
+    transition: background-color 0.3s ease;
+}
+
+.fc-daygrid-day:hover {
+    background-color: #f0f8ff; /* Slight blue tint on hover */
+}
+
+.fc-day-today {
+    background-color: #e7f4ff; /* Highlight today's date */
+    border-color: #007bff; /* Blue border for today */
+    font-weight: bold;
+}
+
+/* Event Styles */
+.fc-event {
+    background-color: #007bff; /* Blue event background */
+    color: #ffffff; /* White text */
+    border: none; /* Remove border */
+    border-radius: 4px; /* Rounded event */
+    padding: 5px;
+    font-size: 0.9rem;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.fc-event:hover {
+    transform: scale(1.05); /* Slight zoom on hover */
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2); /* Shadow on hover */
+}
+
+/* Week and Day Views */
+.fc-timegrid {
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.fc-timegrid-slot {
+    border-color: #ddd;
+}
+
+.fc-timegrid-slot:hover {
+    background-color: #f0f8ff;
+}
+
+/* Tooltip Styling (if any) */
+.fc-popover {
+    background-color: #ffffff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* General Responsive Design */
+@media (max-width: 768px) {
+    #calendar {
+        padding: 10px;
+    }
+
+    .fc-toolbar-title {
+        font-size: 1.2rem;
+    }
+}

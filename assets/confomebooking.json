@@ -1,0 +1,19 @@
+
+{
+    "confomebooking" : [
+    {
+        "id": 1,
+        "title": "Repair Service",
+        "owner": "Owner meddy roncejero",
+        "name": "Appliances Repair",
+        "location": "Japan, Asia",
+        "price": 30,
+        "min": 870,
+        "category": "By meddy roncejero",
+        "description": "Get your appliances repaired!",
+        "button": "appliances / repair",
+        "job": "Repair Service",
+        "image": "https://bookablebiz.vercel.app/_next/image?url=https%3A%2F%2Fres.cloudinary.com%2Fdxjdvjoef%2Fimage%2Fupload%2Fv1723671132%2Fgugmoyhabmnkrdhrbd3i.webp&w=1920&q=75"
+    }
+    ]
+}

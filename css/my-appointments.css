@@ -1,0 +1,34 @@
+/* Card hover effects */
+.card {
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+  }
+  
+  .card:hover {
+    transform: scale(1.02);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  }
+  
+  .card .btn {
+    transition: background-color 0.3s ease, transform 0.2s ease;
+  }
+  
+  .card .btn:hover {
+    background-color: #d9534f; /* Bootstrap Danger Variant */
+    transform: translateY(-3px);
+  }
+  
+  /* Image hover effects */
+  .card img {
+    transition: transform 0.3s ease, filter 0.3s ease;
+  }
+  
+  .card img:hover {
+    /* transform: scale(1.1); */
+    filter: brightness(90%);
+  }
+  
+  .appointment-card:hover {
+    transform: scale(1.02);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
