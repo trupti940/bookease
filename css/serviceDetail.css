@@ -148,7 +148,7 @@ body {
 }
 
 /* Reserve Button */
-.reserve-btn {
+/* .reserve-btn {
     background-color: #333;
     color: white;
     padding: 15px;
@@ -157,12 +157,12 @@ body {
     cursor: pointer;
     margin-top: 20px;
     transition: background-color 0.3s ease, transform 0.3s;
-}
+} */
 
-.reserve-btn:hover {
+/* .reserve-btn:hover {
     background-color: #555;
     transform: scale(1.05);
-}
+} */
 
 /* Responsive Layout */
 @media (max-width: 992px) {
