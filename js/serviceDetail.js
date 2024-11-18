@@ -172,14 +172,6 @@ document.addEventListener("DOMContentLoaded", () => {
   const submitPaymentButton = document.querySelector(".submit-payment-btn");
 
   submitPaymentButton.addEventListener("click", async () => {
-    // Check if the user is logged in by checking if their email is stored
-    //   const userEmail = localStorage.getItem('userEmail');
-
-    //   if (!userEmail) {
-    //       window.location.href = '../aniketcode/signin.html'; // Redirect to your login page
-    //       return;
-    //   }
-
     const cardNumber = document.getElementById("cardNumber").value;
     const expiryDate = document.getElementById("expiryDate").value;
     const cvv = document.getElementById("cvv").value;

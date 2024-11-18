@@ -16,6 +16,7 @@ Fullstack
 
 ## **Directory Structure**
 
+```
 BOOK-EASE/
 ├── .vscode/ # VSCode specific settings
 ├── assets/ # Static assets (images, icons, etc.)
@@ -54,6 +55,7 @@ BOOK-EASE/
 │ ├── unique-dash.js
 ├── index.html # Main entry point for the application
 ├── README.md # Documentation for the project
+```
 
 <!-- e html2pdf.js  -->
 
@@ -95,21 +97,22 @@ open index.html in your browser
 
 ```
 
-
 ## Usage
+
 - Clone the repository using the above command.
 - Open the index.html file in your browser.
 - Register a new user or log in with test credentials to explore features.
 - Use the navigation sidebar to access sections such as Dashboard, Book Appointments, Availability, Notifications, and Reports.
 
-
 ## Credentials
+
 #### User
+
 - Email : book_ease@gmail.com
 - Password : book_ease
 
-
 ## API Used
+
 - Sign Up API : https://identitytoolkit.googleapis.com/v1/accounts:signUp?key=${API_KEY}
 - Login API : https://identitytoolkit.googleapis.com/v1/accounts:signInWithPassword?key=${API_KEY}
 
@@ -117,11 +120,8 @@ open index.html in your browser
 - For Fetching Bookings : https://book-ease-73f27-default-rtdb.firebaseio.com/confomebooking.json
 
 ## Technology Stack
+
 - **Frontend** : HTML, CSS, Bootstrap (Framework), JavaScript, FullCalendar (Library)
 - **Database** : Firebase Realtime Database
 - **Authentication** : Firebase Authentication
 - **Tools** : Visual Studio Code, Postman, Git
-
-
-
-
