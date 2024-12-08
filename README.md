@@ -10,7 +10,7 @@ Fullstack
 
 ## **Deployed App**
 
-- **Frontend**: [https://book-ease.netlify.app/](#)
+- **Frontend**: https://book-ease.netlify.app/
 
 - **Database**: Firebase Realtime Database
 
